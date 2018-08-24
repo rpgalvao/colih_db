@@ -1,0 +1,330 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Ubuntu";
+}
+html, body{
+	height: 100%;
+}
+a{
+	color: #000;
+}
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+.clear{clear: both;}
+.box-login{
+	width: 95%;
+	max-width: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	padding: 40px 2%;
+	background-color: #FFFFFF;
+	box-shadow: 5px 5px 5px 0px #78909C;
+}
+.box-login h3{
+	text-align: center;
+	font-size: 22px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.box-login input[type=text],
+.box-login input[type=email],
+.box-login input[type=password]{
+	width: 100%;
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	padding-left: 8px;
+	margin-top: 8px;
+}
+.box-login input[type=submit]{
+	width: 100px;
+	height: 40px;
+	border: 0;
+	cursor: pointer;
+	color: #FFFFFF;
+	background-color: #B71C1C;
+	font-size: 15px;
+	margin-top: 10px;
+	float: left;
+}
+.box-login label{
+	font-size: 14px;
+	padding: 0 6px;
+	float: right;
+	margin-top: 10px;
+}
+.box-login input[type=checkbox]{
+	float: right;
+	margin-top: 13px;
+}
+.box-login p{
+	margin: 20px 0 10px 0;
+}
+.new-user{
+	margin-top: 20px;
+}
+.new-user p{
+	font-size: 14px;
+}
+.new-user a{
+	text-decoration: none;
+	color: #000;
+}
+.new-user a#esqueci{
+	float: right;
+}
+nav.mobile{
+    display: none;
+}
+header{
+	width: 100%;
+	padding: 40px;
+	border-bottom: 1px solid #CCCCCC;
+}
+header h2{
+	text-align: center;
+	padding: 10px 0;
+	font-size: 30px;
+}
+header h2 a{
+	text-decoration: none;
+	color: #000;
+}
+nav.desktop{
+	padding: 20px 0;
+	text-align: center;
+}
+nav.desktop ul{
+	list-style-type: none;
+	width: 100%;
+}
+nav.desktop ul li{
+	display: inline-block;
+	padding: 0 10px;
+}
+nav.desktop ul li a{
+	display: block;
+	line-height: 40px;
+	text-decoration: none;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #B71C1C;
+	color: #FFFFFF;
+}
+nav.mobile{
+	padding: 20px 0;
+	text-align: center;
+}
+nav.mobile ul{
+	list-style-type: none;
+}
+nav.mobile ul li{
+	display: block;
+}
+nav.mobile ul li a{
+	text-decoration: none;
+	width: 120px;
+	border-radius: 10px;
+	background-color: #B71C1C;
+	color: #FFFFFF;
+	padding: 15px;
+	margin: 8px auto;
+	display: block;
+}
+.last_casos{
+	padding: 40px;
+}
+.last_casos h2{
+	padding-bottom: 30px;
+	text-align: center;
+	font-weight: lighter;
+	font-size: 30px;
+}
+.last_casos table{
+	margin: auto;
+}
+table.casos{
+	border-collapse: collapse;
+	width: 100%;
+}
+table.casos th, td{
+	padding: 25px 10px;
+	text-align: center;
+	border-bottom: 1px solid #DDDDDD;
+}
+table.casos a{
+	display: block;
+	text-decoration: none;
+	color: #000;
+}
+.all_casos h2{
+	padding: 30px 0;
+	text-align: center;
+	font-size: 30px;
+	font-weight: lighter;
+}
+.novo-caso h2{
+	text-align: center;
+	font-size: 30px;
+	font-weight: lighter;
+	padding: 30px 0;
+}
+form.new-caso{
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 20px;
+}
+.form-group{
+	margin-top: 10px;
+}
+.form-group label{
+	display: block;
+}
+.form-group input[type=text],
+.form-group input[type=date]{
+	width: 100%;
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	padding-left: 8px;
+	font-size: 15px;
+}
+.form-group textarea{
+	width: 100%;
+	height: 120px;
+	padding: 10px;
+	font-size: 15px;
+	resize: vertical;
+	border: 1px solid #CCCCCC;
+}
+.form-group select{
+	width: 50%;
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	padding-left: 10px;
+}
+.form-group input[type=submit]{
+	width: auto;
+	height: 40px;
+	color: #FFFFFF;
+	background-color: #B71C1C;
+	border: none;
+	padding: 0 20px;
+	margin-top: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.form-group a.excluir{
+	display: inline-block;
+	width: auto;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #B71C1C;
+	padding: 0 20px;
+	margin-top: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-left: 20px;
+	font-size: 14px;
+}
+.aviso{
+	margin: 20px auto;
+	width: 100%;
+	max-width: 600px;
+	height: 70px;
+	background-color: #43a047;
+	color: #FFFFFF;
+	border-radius: 20px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 18px;
+}
+.erro{
+	margin: 20px auto;
+	width: 100%;
+	max-width: 600px;
+	height: 70px;
+	background-color: #B71C1C;
+	color: #FFFFFF;
+	border-radius: 20px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 18px;
+}
+.contatos h2{
+	padding: 30px 0;
+	text-align: center;
+	font-weight: lighter;
+	font-size: 30px;
+}
+.contatos form{
+	padding: 30px 0;
+}
+.contatos form select{
+	width: 50%;
+	height: 40px;
+	border: 1px solid #CCCCCC;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+.contatos form input[type=submit]{
+	width: auto;
+	height: 40px;
+	color: #FFFFFF;
+	background-color: #B71C1C;
+	border: none;
+	padding: 0 20px;
+	margin-left: 15px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.lembretes{
+	padding: 40px 0;
+}
+.lembretes h2{
+	text-align: center;
+	font-weight: lighter;
+	font-size: 30px;
+}
+.lembretes a{
+	display: block;
+	padding-top: 40px;
+}
+.tabela-lembrete{
+	padding: 10px 0;
+	width: 100%;
+}
+table.tabela-lembrete td{
+	padding: 25px 10px;
+	text-align: justify;
+	border-bottom: 1px solid #AAAAAA;
+}
+table.tabela-lembrete a{
+	text-decoration: none;
+	color: #000;
+}
+.last_casos .convite{
+	text-decoration: none;
+	width: auto;
+	padding: 15px;
+	background-color: #B71C1C;
+	color: #FFFFFF;
+	border-radius: 10px;
+}
+
+@media screen and (max-width: 950px) {
+    nav.desktop{
+        display: none;
+    }
+    nav.mobile{
+        display: block;
+    }
+}
