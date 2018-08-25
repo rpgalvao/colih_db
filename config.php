@@ -12,11 +12,11 @@ if (ENVIRONMENT == 'development') {
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = 'root';
 } else {
-	define("BASE_URL", 'http://colih.rpgsistemas.com.br/');
-	$config['dbname'] = 'ger_colih';
-	$config['dbhost'] = 'ger_colih.mysql.dbaas.com.br';
-	$config['dbuser'] = 'ger_colih';
-	$config['dbpass'] = 'Colih77!*';
+	define("BASE_URL", 'http://....');
+	$config['dbname'] = '';
+	$config['dbhost'] = '';
+	$config['dbuser'] = '';
+	$config['dbpass'] = '';
 }
 
 global $db;
