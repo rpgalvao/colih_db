@@ -79,6 +79,9 @@ a{
 .new-user a#esqueci{
 	float: right;
 }
+.perfil{
+	float: right;
+}
 header{
 	width: 100%;
 	padding: 40px;
@@ -312,7 +315,10 @@ nav.admin ul li{
 }
 
 @media screen and (max-width: 950px) {
-    nav.desktop{
+    .perfil{
+		float: none;
+	}
+	nav.desktop{
         display: none;
     }
     nav.mobile{

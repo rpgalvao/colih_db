@@ -92,4 +92,22 @@ class adminController extends Controller {
         $u->excluirUsuario($id);
         header("Location: ".BASE_URL."admin/users");
     }
+
+    public function perfil($id){
+        $dados = array(
+            'erro' => '',
+            'aviso' => ''
+        );
+        $u = new Usuarios();
+        $dados['infos'] = $u->getPerfil($id);
+        if(isset($_POST['atualizar']) && !empty($_POST['atualizar'])){
+            $nome = addslashes($_POST['nome']);
+            $email = addslashes($_POST['email']);
+            $senha = md5($_POST['senha']);
+            $u->updatePerfil($id, $nome, $email, $senha);
+            $dados['infos'] = $u->getPerfil($id);
+        }
+
+        $this->loadTemplate("perfil", $dados);
+    }
 }

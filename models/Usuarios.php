@@ -184,4 +184,35 @@ class Usuarios extends Model {
         }
         return $resp;
     }
+
+    public function getPerfil($id){
+        $resp = array();
+        $sql = "SELECT * FROM usuarios WHERE id = :id";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $resp = $sql->fetchAll();
+        }
+        return $resp;
+    }
+
+    public function updatePerfil($id, $nome, $email, $senha = null){
+        if(!empty($senha)){
+            $sql = "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha WHERE id = :id";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(":nome", $nome);
+            $sql->bindValue(":email", $email);
+            $sql->bindValue(":senha", $senha);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+        }
+        $sql = "UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(":nome", $nome);
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
 }

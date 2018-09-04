@@ -15,6 +15,9 @@
 				<?php
 					$u = new Usuarios();
 				?>
+				<div class="perfil">
+					<h2><a href="<?php echo BASE_URL; ?>admin/perfil/<?php echo $_SESSION['login']; ?>" title="Meu Perfil"><i class="fa fa-user"></i></a></h2>
+				</div>
 				<h2><a href="<?php echo BASE_URL; ?>">Gerenciamento de casos</a></h2>
 				<nav class="desktop">
 					<ul>
