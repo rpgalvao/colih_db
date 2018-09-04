@@ -28,4 +28,4 @@
             <?php endforeach; ?>
         </table>
     </div><!--container-->
-</div><!--last_casos--><?php
+</div><!--last_casos-->
