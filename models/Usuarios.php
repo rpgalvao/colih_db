@@ -171,4 +171,17 @@ class Usuarios extends Model {
         $sql->bindValue(":id", $id);
         $sql->execute();
     }
+
+    public function getEmailCadastro($token){
+        $resp = array();
+        $sql = "SELECT email from new_users WHERE hash = :hash";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(":hash", $token);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $resp = $sql->fetch();
+        }
+        return $resp;
+    }
 }

@@ -1,24 +1,22 @@
 <div class="last_casos">
     <div class="container">
-        <h2>Lista de Usuários</h2>
-        <a class="convite" href="<?php echo BASE_URL; ?>admin/novoMembro">Convidar Membro</a>
-        <table style="margin-top: 30px;" class="casos">
+        <nav class="admin">
+            <ul>
+                <li><a class="convite" href="<?php echo BASE_URL; ?>admin/novoMembro">Convidar Membro</a></li>
+                <li><a class="convite" href="<?php echo BASE_URL; ?>admin/users">Listar Usuários</a></li>
+                <li><a class="convite" href="<?php echo BASE_URL; ?>casos/todos">Todos os casos</a></li>
+            </ul>
+        </nav>
+        <h2>Estatísticas</h2>
+        <table style="margin-top: 30px;width: 50%;" class="casos">
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Usuário</th>
-                <th>Ações</th>
+                <th>Total de Casos</th>
+                <th><?php echo $total;?></th>
             </tr>
-            <?php foreach($users as $user): ?>
-                <tr>
-                    <td><?php echo $user['id']; ?></td>
-                    <td><?php echo $user['nome']; ?></td>
-                    <td><?php echo $user['email']; ?></td>
-                    <td><?php echo $user['usuario']; ?></td>
-                    <td><a class="excluir" href="<?php echo BASE_URL; ?>admin/excluir/<?php echo $user['id']; ?>">Excluir</a></td>
-                </tr>
-            <?php endforeach; ?>
+            <tr>
+                <th>Casos Abertos</th>
+                <th><?php  echo $abertos; ?></th>
+            </tr>
         </table>
     </div><!--container-->
-</div><!--last_casos--><?php
+</div><!--last_casos-->

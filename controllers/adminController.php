@@ -12,9 +12,17 @@ class adminController extends Controller {
 
     public function index(){
         $dados = array();
+        $c = new Casos();
+        $dados['total'] = $c->todosCasos();
+        $dados['abertos'] = $c->todosAbertos();
+        $this->loadTemplate("admin", $dados);
+    }
+
+    public function users(){
+        $dados = array();
         $u = new Usuarios();
         $dados['users'] = $u->getUsuarios();
-        $this->loadTemplate("admin", $dados);
+        $this->loadTemplate("usuarios", $dados);
     }
 
     public function novoMembro(){
@@ -25,7 +33,7 @@ class adminController extends Controller {
             $token = md5(time().rand(0, 9999).rand(0, 9999));
             $u->insertNewMember($email, $token);
             $link = BASE_URL."admin/cadastroMembro/".$token;
-            $mensagem = "Você foi convidado para participar do banco de dados de informações da COLIH Curitiba.<br>Clique no link abaixo para efetuar seu cadastro:<br><a href='".$link."'>Realizar o cadastro</a>";
+            $mensagem = "Olá!<br><br>Você foi convidado para participar do banco de dados de informações da COLIH Curitiba.<br><br>Clique no link abaixo para efetuar seu cadastro:<br><br><a href='".$link."'>Realizar o cadastro</a>";
             $info = array('assunto' => 'Convite para COLIH', 'corpo' => $mensagem);
 
             $mail = new Email();
@@ -55,11 +63,16 @@ class adminController extends Controller {
                     $usuario = addslashes($_POST['usuario']);
                     $senha = md5($_POST['senha']);
                     if ($u->verificarUsuario($usuario, $email)) {
-                        if ($u->cadastrarUsuario($nome, $email, $usuario, $senha)) {
-                            $u->changeToken($token);
-                            $dados['aviso'] = "Usuário cadastrado com sucesso!";
-                        } else {
-                            $dados['erro'] = "Não foi possível cadastrar esse usuário";
+                        $cadastro = $u->getEmailCadastro($token);
+                        if(in_array($email, $cadastro)){
+                            if ($u->cadastrarUsuario($nome, $email, $usuario, $senha)) {
+                                $u->changeToken($token);
+                                $dados['aviso'] = "Usuário cadastrado com sucesso!";
+                            } else {
+                                $dados['erro'] = "Não foi possível cadastrar esse usuário";
+                            }
+                        }else{
+                            $dados['erro'] = "O e-mail informado deve ser o mesmo usado no convite";
                         }
                     } else {
                         $dados['erro'] = "Nome de usuário e/ou e-mail já cadastrados!";
@@ -77,6 +90,6 @@ class adminController extends Controller {
     public function excluir($id){
         $u = new Usuarios();
         $u->excluirUsuario($id);
-        header("Location: ".BASE_URL."admin");
+        header("Location: ".BASE_URL."admin/users");
     }
 }

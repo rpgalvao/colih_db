@@ -79,9 +79,6 @@ a{
 .new-user a#esqueci{
 	float: right;
 }
-nav.mobile{
-    display: none;
-}
 header{
 	width: 100%;
 	padding: 40px;
@@ -95,6 +92,9 @@ header h2{
 header h2 a{
 	text-decoration: none;
 	color: #000;
+}
+nav.mobile{
+	display: none;
 }
 nav.desktop{
 	padding: 20px 0;
@@ -117,26 +117,6 @@ nav.desktop ul li a{
 	border-radius: 10px;
 	background-color: #B71C1C;
 	color: #FFFFFF;
-}
-nav.mobile{
-	padding: 20px 0;
-	text-align: center;
-}
-nav.mobile ul{
-	list-style-type: none;
-}
-nav.mobile ul li{
-	display: block;
-}
-nav.mobile ul li a{
-	text-decoration: none;
-	width: 120px;
-	border-radius: 10px;
-	background-color: #B71C1C;
-	color: #FFFFFF;
-	padding: 15px;
-	margin: 8px auto;
-	display: block;
 }
 .last_casos{
 	padding: 40px;
@@ -319,6 +299,17 @@ table.tabela-lembrete a{
 	color: #FFFFFF;
 	border-radius: 10px;
 }
+nav.admin{
+	padding: 10px 0;
+	margin-bottom: 50px;
+}
+nav.admin ul{
+	list-style-type: none;
+}
+nav.admin ul li{
+	display: inline-block;
+	margin: 0 15px;
+}
 
 @media screen and (max-width: 950px) {
     nav.desktop{
@@ -327,4 +318,35 @@ table.tabela-lembrete a{
     nav.mobile{
         display: block;
     }
+	nav.mobile{
+		padding: 20px 0;
+		text-align: center;
+	}
+	nav.mobile h2.menu{
+		cursor: pointer;
+		display: inline-block;
+		float: left;
+	}
+	nav.mobile ul{
+		list-style-type: none;
+		display: none;
+	}
+	nav.mobile ul li{
+		display: block;
+	}
+	nav.mobile ul li a{
+		text-decoration: none;
+		width: 120px;
+		border-radius: 10px;
+		background-color: #B71C1C;
+		color: #FFFFFF;
+		padding: 15px;
+		margin: 8px auto;
+		display: block;
+	}
+	nav.admin ul li{
+		display: block;
+		text-align: center;
+		padding: 20px 0;
+	}
 }

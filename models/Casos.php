@@ -139,4 +139,30 @@ class Casos extends Model {
 
         return $resp;
     }
+
+    public function todosCasos(){
+        $resp = 0;
+        $sql = "SELECT * FROM casos";
+        $sql = $this->db->prepare($sql);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $resp = $sql->fetchAll();
+        }
+
+        return count($resp);
+    }
+
+    public function todosAbertos(){
+        $resp = 0;
+        $sql = "SELECT * FROM casos WHERE fechado = 0";
+        $sql = $this->db->prepare($sql);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $resp = $sql->fetchAll();
+        }
+
+        return count($resp);
+    }
 }
