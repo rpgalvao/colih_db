@@ -23,7 +23,7 @@
                     <td><?php echo $user['nome']; ?></td>
                     <td><?php echo $user['email']; ?></td>
                     <td><?php echo $user['usuario']; ?></td>
-                    <td><a class="excluir" href="<?php echo BASE_URL; ?>admin/excluir/<?php echo $user['id']; ?>">Excluir</a></td>
+                    <td><a class="excluir" href="<?php echo BASE_URL; ?>admin/excluir/<?php echo $user['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir esse usuário?')">Excluir</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>

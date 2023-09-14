@@ -64,7 +64,7 @@
             </div><!--form-group-->
             <div class="form-group">
                 <input type="submit" name="editar" value="Atualizar">
-                <a href="<?php echo BASE_URL; ?>casos/excluir/<?php echo $info['id']; ?>" class="excluir">Excluir</a>
+                <a href="<?php echo BASE_URL; ?>casos/excluir/<?php echo $info['id']; ?>" class="excluir" onclick="return confirm('Você tem certeza que deseja excluir esse caso?')">Excluir</a>
             </div><!--form-group-->
         </form>
     </div><!--container-->
